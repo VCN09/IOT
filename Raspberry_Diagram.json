@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "VCN09",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": -59.19,
+     "left": 21.52, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -83.56,
+      "left": -31.03,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -34.3,
+      "left": -30.2,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 14.54,
+      "left": -30.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "pico:GP1", "green", [ "v0" ] ],
+    [ "pico:GND.1", "led1:C", "black", [ "h0" ] ],
+    [ "pico:GP5", "led2:A", "green", [ "h0" ] ],
+    [ "pico:GND.2", "led2:C", "black", [ "h0" ] ],
+    [ "pico:GP9", "led3:A", "green", [ "h0" ] ],
+    [ "pico:GND.3", "led3:C", "black", [ "h0" ] ]
+  ]
+}
